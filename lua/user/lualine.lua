@@ -512,53 +512,53 @@ ins_right {
 }
 
 -- File size icon.
-ins_right {
-  function() return icons['typesize'] end,
-  color = 'LualineTypeMid',
-  cond = conditions.display_stats,
-  padding = { left = 1, right = 0 }
-}
+-- ins_right {
+--   function() return icons['typesize'] end,
+--   color = 'LualineTypeMid',
+--   cond = conditions.display_stats,
+--   padding = { left = 1, right = 0 }
+-- }
 -- File size in b, k, m or g.
-ins_right {
-  function()
-    local function format_file_size(file)
-      local size = vim.fn.getfsize(file)
-      if size <= 0 then return '' end
-      local sufixes = { 'b', 'k', 'm', 'g' }
-      local i = 1
-      while size > 1024 do
-        size = size / 1024
-        i = i + 1
-      end
-
-      if (i == 1)
-      then
-        return string.format('%.0f%s', size, sufixes[i])
-      end
-
-      return string.format('%.1f%s', size, sufixes[i])
-    end
-
-    local file = vim.fn.expand('%:p')
-    if string.len(file) == 0 then return '' end
-    return format_file_size(file)
-  end,
-  color = 'LualineTypeTxt',
-  cond = conditions.display_stats,
-  padding = { left = 1, right = 0 }
-}
-ins_right {
-  function() return icons['typeenc'] end,
-  color = 'LualineTypeMid',
-  cond = conditions.display_stats,
-  padding = { left = 1, right = 0 }
-}
-ins_right {
-  'encoding',
-  color = 'LualineTypeTxt',
-  cond = conditions.display_stats,
-  padding = { left = 1, right = 0 }
-}
+-- ins_right {
+--   function()
+--     local function format_file_size(file)
+--       local size = vim.fn.getfsize(file)
+--       if size <= 0 then return '' end
+--       local sufixes = { 'b', 'k', 'm', 'g' }
+--       local i = 1
+--       while size > 1024 do
+--         size = size / 1024
+--         i = i + 1
+--       end
+--
+--       if (i == 1)
+--       then
+--         return string.format('%.0f%s', size, sufixes[i])
+--       end
+--
+--       return string.format('%.1f%s', size, sufixes[i])
+--     end
+--
+--     local file = vim.fn.expand('%:p')
+--     if string.len(file) == 0 then return '' end
+--     return format_file_size(file)
+--   end,
+--   color = 'LualineTypeTxt',
+--   cond = conditions.display_stats,
+--   padding = { left = 1, right = 0 }
+-- }
+-- ins_right {
+--   function() return icons['typeenc'] end,
+--   color = 'LualineTypeMid',
+--   cond = conditions.display_stats,
+--   padding = { left = 1, right = 0 }
+-- }
+-- ins_right {
+--   'encoding',
+--   color = 'LualineTypeTxt',
+--   cond = conditions.display_stats,
+--   padding = { left = 1, right = 0 }
+-- }
 ins_right {
   function() return icons['bracketright'] end,
   color = 'LualineTypeEnd',
