@@ -351,7 +351,7 @@ ins_left {
 -- Lsp Section {{{2
 
 -- Lsp Client {{{3
-ins_left {
+ins_right {
   function()
     highlightGroup('Lsp', colors.lspiconbg, colors.lspbg, colors.lsptext)
     return icons['bracketleft']
@@ -360,19 +360,19 @@ ins_left {
   cond = conditions.display_lsp,
   padding = { left = 1, right = 0 }
 }
-ins_left {
+ins_right {
   function() return icons['lsp'] end,
   color = 'LualineLspMidInv',
   cond = conditions.display_lsp,
   padding = { left = 0, right = 0 }
 }
-ins_left {
+ins_right {
   function() return icons['bracketright'] end,
   color = 'LualineLspMid',
   cond = conditions.display_lsp,
   padding = { left = 0, right = 0 }
 }
-ins_left {
+ins_right {
   function()
     local msg = 'No Active Lsp'
     local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -393,7 +393,7 @@ ins_left {
 -- }}}3
 
 -- Diagnostics {{{3
-ins_left {
+ins_right {
   'diagnostics',
   sources = { "nvim_lsp" },
   symbols = {
@@ -412,7 +412,7 @@ ins_left {
   cond = conditions.display_lsp,
   padding = { left = 0, right = 0 }
 }
-ins_left {
+ins_right {
   function() return icons['bracketright'] end,
   color = 'LualineLspEnd',
   cond = conditions.display_lsp,
