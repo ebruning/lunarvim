@@ -89,6 +89,15 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
+-- Lualine
+lvim.builtin.lualine.style = "default"
+-- local components = require("lvim.core.lualine.components")
+-- lvim.builtin.lualine.sections.lualine_a = { "mode" }
+-- lvim.builtin.lualine.sections.lualine_y = {
+-- components.spaces,
+-- components.location
+-- }
+
 -- generic LSP settings
 
 -- ---@usage disable automatic installation of servers
@@ -273,31 +282,7 @@ lvim.plugins = {
 --    rename_update_links = true,
 -- })
 
-require('lualine').setup {
-  options = {
-    icons_enabled = true,
-    theme = 'gruvbox-material',
-    component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = '' },
-    disabled_filetypes = {},
-    always_divide_middle = true,
-  },
-  sections = {
-    lualine_a = { 'mode' },
-    lualine_b = { 'branch', 'diff', 'diagnostics' },
-    lualine_c = { 'filename' },
-    lualine_x = { 'encoding', 'fileformat', 'filetype' },
-    lualine_y = { 'progress' },
-    lualine_z = { 'location' }
-  },
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = { 'filename' },
-    lualine_x = { 'location' },
-    lualine_y = {},
-    lualine_z = {}
-  },
-  tabline = {},
-  extensions = {}
-}
+-- Vim config {{{1
+-- vim.cmd('source ~/.config/lvim/user.vim')
+vim.cmd('source ~/.config/lvim/lua/user/lualine.lua')
+-- }}}1
